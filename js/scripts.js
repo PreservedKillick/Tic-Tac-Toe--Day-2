@@ -30,7 +30,6 @@ var Board = {
 	initialize: function() {
 		var board = Object.create(Board)
 		this.createSpaces()
-
 		return board
 	},
 	createSpaces: function() {
@@ -64,16 +63,57 @@ var Game = {
     //this.move = 1;
 	},
 
-	move: function(i) {
-		// var moveCounter = [];
-		// for (var i = 1; i <= 9; i++) {
-		// 	moveCounter.push(i);
-		// }
-    if ((moveCounter[i]) % 2 !== 0) {
-			return 'X' 
-		} else {
-			return 'O';
-		}
-	}
-}
+	move: function(coord) {
+    var coordArray = coord.split(',')
+    var coordX = parseInt(coordArray[0]);
+    var coordY = parseInt(coordArray[1]);
+    var coordSpace = Space.initialize(coordX, coordY);
+    return coordSpace;
+    // this.coordSpace = coordSpace
+    // console.log(this.coordSpace)
+    // var matchSpace = Board.spaces.filter(coordSpace);
+    // console.log(matchSpace);
+    // console.log(Board.spaces)
+    // if (turn === 1) {
+    // 	this.spaces[].markBy('X')
+    // } else {
+    // 	this.coordSpace.markBy('O');
+    // }
+
+
+
+
+    // var turn = 1;
+    // this.turn +=1;
+    
+
+ //    if (turn % 2 !== 0) {
+	// 			return player1
+	// 		} else {
+	// 			return player2;
+	// 	  }) on userInputSpace
+
+	// 	// for (var i = 0; i <= 8; i++) {
+ //  //   	if (turn % 2 !== 0) {
+	// 	// 		return player1
+	// 	// 	} else {
+	// 	// 		return player2;
+	// 	//   }
+	// // },
+	
+	// endGame: function() {
+	// 	if (winChecker || (turn === 8)) {
+	// 		return true
+	// 	}
+	// }
+}}
+
+$(document).ready(function() {
+	$("td").click(function() {
+		var coord = $(this).attr('id');
+		alert(coord);
+		console.log(coord)
+
+	})
+})
 

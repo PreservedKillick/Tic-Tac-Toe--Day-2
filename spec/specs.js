@@ -1,5 +1,6 @@
 beforeEach(function() {
   Board.spaces = [];
+  var newBoard = [];
 });
 
 describe('Player', function() {
@@ -75,6 +76,12 @@ describe('Game', function() {
 			var testGame = Object.create(Game);
 			testGame.initialize();
 			testGame.move(4).should.equal('O');
+		})
+		it('does more stuff', function() {
+			var testGame = Object.create(Game)
+			testGame.initialize()
+			Game.move('2,3')
+			Space.isPrototypeOf(testGame.coordSpace).should.equal(true)
 		})
 	})
 });
